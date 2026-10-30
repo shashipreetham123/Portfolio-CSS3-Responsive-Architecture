@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Shashi Preetham, a web developer building fast, accessible and semantic websites. Browse projects and get in touch.">
+  <link rel="canonical" href="https://shashipreetham123.github.io/Portfolio-CSS3-Responsive-Architecture/">
+
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header>
+    <p><a href="index.html">Shashi Preetham</a></p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon" aria-hidden="true">🌓</span> Theme
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section aria-labelledby="hero-title">
+      <h1 id="hero-title">Hi, I'm Shashi Preetham. I build accessible, fast websites.</h1>
+      <p>I design and develop semantic, inclusive web experiences that work for everyone, on every device.</p>
+      <p><a href="projects.html">View my projects</a> | <a href="contact.html">Contact me</a></p>
+    </section>
+
+    <section aria-labelledby="skills-title">
+      <h2 id="skills-title">What I do</h2>
+      <ul>
+        <li><strong>Semantic HTML:</strong> meaningful markup that search engines and assistive technology understand.
+        </li>
+        <li><strong>Accessible design:</strong> interfaces with keyboard support and clear structure.</li>
+        <li><strong>Performance:</strong> lightweight pages with quick load times.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <nav aria-label="Social links">
+      <ul>
+        <li><a href="https://github.com/shashipreetham123" rel="noopener noreferrer">GitHub profile</a></li>
+        <li><a href="https://www.linkedin.com/in/shashi-preetham-46ba13376/" rel="noopener noreferrer">LinkedIn
+            profile</a></li>
+      </ul>
+    </nav>
+    <p><small>&copy; 2026 Shashi Preetham. All rights reserved.</small></p>
+  </footer>
+  <script id="theme-toggle-script">
+    (function () {
+      const toggle = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      const savedTheme = localStorage.getItem('theme');
+
+      if (savedTheme) {
+        root.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        root.setAttribute('data-theme', 'dark');
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          const currentTheme = root.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>

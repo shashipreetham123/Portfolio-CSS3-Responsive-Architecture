@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects</title>
+  <meta name="description"
+    content="Selected web development projects by Shashi Preetham, including accessible web apps and responsive websites.">
+  <link rel="canonical" href="https://shashipreetham123.github.io/Portfolio-CSS3-Responsive-Architecture/projects.html">
+
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header>
+    <p><a href="index.html">Shashi Preetham</a></p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon" aria-hidden="true">🌓</span> Theme
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Projects</h1>
+    <p>A selection of recent work.</p>
+
+    <article aria-labelledby="p1-title">
+      <h2 id="p1-title">Sudoku Solver</h2>
+      <p>A HTML, CSS, Javascript Program Which Solves Sudoku by Backtracking Algorithm.</p>
+      <p><a href="https://github.com/shashipreetham123/Sudoku-Solver" rel="noopener noreferrer">Source Code</a></p>
+    </article>
+
+    <article aria-labelledby="p2-title">
+      <h2 id="p2-title">Tic Tac Toe</h2>
+      <p>A Tic Tac Toe Game Which Uses Minimax - Alpha Beta Pruning to Respond with Best Move</p>
+      <p><a href="https://github.com/shashipreetham123/Tic-Tac-Toe" rel="noopener noreferrer">Source Code</a>
+      </p>
+    </article>
+
+    <article aria-labelledby="p3-title">
+      <h2 id="p3-title">A* Path Finder</h2>
+      <p>Implementation of A* Algorithm to Find the Optimal Path in a Grid</p>
+      <p><a href="https://github.com/shashipreetham123/A-Star-Path-Finder" rel="noopener noreferrer">Source Code</a></p>
+    </article>
+  </main>
+
+  <footer>
+    <nav aria-label="Social links">
+      <ul>
+        <li><a href="https://github.com/shashipreetham123" rel="noopener noreferrer">GitHub profile</a></li>
+        <li><a href="https://www.linkedin.com/in/shashi-preetham-46ba13376/" rel="noopener noreferrer">LinkedIn
+            profile</a></li>
+      </ul>
+    </nav>
+    <p><small>&copy; 2026 Shashi Preetham. All rights reserved.</small></p>
+  </footer>
+  <script id="theme-toggle-script">
+    (function () {
+      const toggle = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      const savedTheme = localStorage.getItem('theme');
+
+      if (savedTheme) {
+        root.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        root.setAttribute('data-theme', 'dark');
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          const currentTheme = root.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>

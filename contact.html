@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact</title>
+  <meta name="description"
+    content="Get in touch with Shashi Preetham for web development projects, collaborations or questions using the contact form.">
+  <link rel="canonical" href="https://shashipreetham123.github.io/Portfolio-CSS3-Responsive-Architecture/contact.html">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header>
+    <p><a href="index.html">Shashi Preetham</a></p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon" aria-hidden="true">🌓</span> Theme
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Contact me</h1>
+    <p>Fields marked with an asterisk (*) are required.</p>
+
+    <form action="/" method="post" enctype="text/plain" aria-label="Contact form">
+      <p>
+        <label for="name">Full name *</label><br>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+      </p>
+
+      <p>
+        <label for="email">Email address *</label><br>
+        <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-hint"><br>
+        <small id="email-hint">Example: name@example.com</small>
+      </p>
+
+      <p>
+        <label for="topic">Topic</label><br>
+        <select id="topic" name="topic">
+          <option value="general">General enquiry</option>
+          <option value="project">New project</option>
+          <option value="collab">Collaboration</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="message">Message *</label><br>
+        <textarea id="message" name="message" rows="6" cols="40" required minlength="10"
+          aria-describedby="message-hint"></textarea><br>
+        <small id="message-hint">At least 10 characters.</small>
+      </p>
+
+      <p><button type="submit">Send message</button></p>
+    </form>
+  </main>
+
+  <footer>
+    <nav aria-label="Social links">
+      <ul>
+        <li><a href="https://github.com/shashipreetham123" rel="noopener noreferrer">GitHub profile</a></li>
+        <li><a href="https://www.linkedin.com/in/shashi-preetham-46ba13376/" rel="noopener noreferrer">LinkedIn
+            profile</a></li>
+      </ul>
+    </nav>
+    <p><small>&copy; 2026 Shashi Preetham. All rights reserved.</small></p>
+  </footer>
+  <script id="theme-toggle-script">
+    (function () {
+      const toggle = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      const savedTheme = localStorage.getItem('theme');
+
+      if (savedTheme) {
+        root.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        root.setAttribute('data-theme', 'dark');
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          const currentTheme = root.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>

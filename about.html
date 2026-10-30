@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About</title>
+  <meta name="description"
+    content="Learn about Shashi Preetham: background, skills and experience in accessible front-end web development.">
+  <link rel="canonical" href="https://shashipreetham123.github.io/Portfolio-CSS3-Responsive-Architecture/about.html">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header>
+    <p><a href="index.html">Shashi Preetham</a></p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon" aria-hidden="true">🌓</span> Theme
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>About me</h1>
+
+    <article aria-labelledby="bio-title">
+      <h2 id="bio-title">Background</h2>
+      <p>I'm a web developer focused on building inclusive, performant websites. I enjoy turning complex requirements
+        into clean, understandable interfaces.</p>
+    </article>
+
+    <section aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <ul>
+        <li>Javascript, Java and Python</li>
+        <li>Basic HTML & CSS</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="exp-title">
+      <h2 id="exp-title">Experience</h2>
+      <h3>Front-End Developer</h3>
+      <p><time datetime="2024-01">Jan 2024</time> to <time datetime="2026-10">Oct 2026</time></p>
+      <p>Built and maintained accessible websites.</p>
+    </section>
+
+    <aside aria-labelledby="aside-title">
+      <h2 id="aside-title">Currently</h2>
+      <p>Open to freelance and full-time opportunities.</p>
+    </aside>
+  </main>
+
+  <footer>
+    <nav aria-label="Social links">
+      <ul>
+        <li><a href="https://github.com/shashipreetham123" rel="noopener noreferrer">GitHub profile</a></li>
+        <li><a href="https://www.linkedin.com/in/shashi-preetham-46ba13376/" rel="noopener noreferrer">LinkedIn
+            profile</a></li>
+      </ul>
+    </nav>
+    <p><small>&copy; 2026 Shashi Preetham. All rights reserved.</small></p>
+  </footer>
+  <script id="theme-toggle-script">
+    (function () {
+      const toggle = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      const savedTheme = localStorage.getItem('theme');
+
+      if (savedTheme) {
+        root.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        root.setAttribute('data-theme', 'dark');
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          const currentTheme = root.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>
